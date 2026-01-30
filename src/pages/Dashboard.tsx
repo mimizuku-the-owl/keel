@@ -5,6 +5,7 @@ import { AgentStatusCard } from "@/components/AgentStatusCard";
 import { AlertBanner } from "@/components/AlertBanner";
 import { MiniActivityFeed } from "@/components/MiniActivityFeed";
 import { CostChart } from "@/components/CostChart";
+import { SnitchLeaderboard } from "@/components/SnitchScore";
 import {
   DollarSign,
   Zap,
@@ -89,6 +90,9 @@ export function Dashboard() {
           </Card>
         </div>
       </div>
+
+      {/* Snitch Leaderboard */}
+      <SnitchLeaderboard />
 
       {/* Agent cards */}
       <div>

@@ -14,6 +14,8 @@ import type * as alerting from "../alerting.js";
 import type * as budgets from "../budgets.js";
 import type * as costs from "../costs.js";
 import type * as notifications from "../notifications.js";
+import type * as seed from "../seed.js";
+import type * as snitchScore from "../snitchScore.js";
 
 import type {
   ApiFromModules,
@@ -28,6 +30,8 @@ declare const fullApi: ApiFromModules<{
   budgets: typeof budgets;
   costs: typeof costs;
   notifications: typeof notifications;
+  seed: typeof seed;
+  snitchScore: typeof snitchScore;
 }>;
 
 /**

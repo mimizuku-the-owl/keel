@@ -136,6 +136,24 @@ export default defineSchema({
     errorCount: v.number(),
   }).index("by_agent_time", ["agentId", "timestamp"]),
 
+  // Snitch Score™ — how often your agent tattles
+  snitchEvents: defineTable({
+    agentId: v.id("agents"),
+    type: v.union(
+      v.literal("alert_fired"),
+      v.literal("safety_refusal"),
+      v.literal("content_flag"),
+      v.literal("budget_warning"),
+      v.literal("permission_ask"),
+      v.literal("proactive_warning"),
+      v.literal("compliance_report"),
+      v.literal("tattled_on_user"),
+    ),
+    description: v.string(),
+    severity: v.union(v.literal("snitch"), v.literal("hall_monitor"), v.literal("narc")),
+    timestamp: v.number(),
+  }).index("by_agent", ["agentId"]),
+
   // Notification channels config
   notificationChannels: defineTable({
     type: v.union(v.literal("discord"), v.literal("email"), v.literal("webhook")),
