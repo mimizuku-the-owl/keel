@@ -5,7 +5,7 @@ import { AgentStatusCard } from "@/components/AgentStatusCard";
 import { AlertBanner } from "@/components/AlertBanner";
 import { MiniActivityFeed } from "@/components/MiniActivityFeed";
 import { CostChart } from "@/components/CostChart";
-import { SnitchLeaderboard } from "@/components/SnitchScore";
+import { SnitchLeaderboard, SnitchScore } from "@/components/SnitchScore";
 import {
   DollarSign,
   Zap,
@@ -90,6 +90,14 @@ export function Dashboard() {
           </Card>
         </div>
       </div>
+
+      {/* Snitch scores per agent */}
+      {agents && agents.length > 0 && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <SnitchLeaderboard />
+          {agents[0] && <SnitchScore agentId={agents[0]._id} />}
+        </div>
+      )}
 
       {/* Snitch Leaderboard */}
       <SnitchLeaderboard />
