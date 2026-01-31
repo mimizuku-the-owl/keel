@@ -23,9 +23,9 @@ export function AlertsPage() {
     <div className="p-8 max-w-7xl mx-auto space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-zinc-100">Alerts</h2>
+          <h2 className="text-2xl font-bold text-zinc-100">Alarms</h2>
           <p className="text-sm text-zinc-500 mt-1">
-            Configure rules and view alert history
+            Configure alarm rules and view alert history
           </p>
         </div>
       </div>
